@@ -14,5 +14,9 @@ describe('basic server functionality', () => {
   test('request returns a valid timestamp', async () => {
     const response = await request.get('/');
     expect(typeof response.body.timestamp).toBe('string');
+  });
+  test('test route', async () => {
+    const response = await request.get('/test');
+    expect(response.text).toBe('hello')
   })
 })
