@@ -2,8 +2,7 @@
 
 
 function greetingRoute(req, res) {
-  console.log(req.timestamp);
-  res.send('hello world!');
+  res.send({text:'hello world!', timestamp: req.timestamp});
 }
 
 module.exports = greetingRoute;
