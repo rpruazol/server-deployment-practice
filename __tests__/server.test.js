@@ -19,6 +19,6 @@ describe('basic server functionality', () => {
   });
   test('test route', async () => {
     const response = await request.get('/test');
-    expect(response.text).toBe('this is a test route?');
+    expect(response.text).toBe('this is a test route');
   })
 })
