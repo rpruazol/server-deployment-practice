@@ -1,12 +1,10 @@
 'use strict';
 
-
-
-function errorHandler500(req, res){
+function errorHandler500(err, req, res, next){
   res.status(500).send({
-    error: 500,
+    status: 500,
     route: req.path,
-    message: 'Something went wrong.'
+    message: err.message ? err.message : err
   });
 };
 

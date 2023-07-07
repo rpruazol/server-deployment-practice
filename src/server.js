@@ -8,7 +8,8 @@ const timeLogger = require('./middleware/logger');
 const testRoute = require('./routes/testRoute');
 const errorHandler404 = require('./error-handlers/404');
 const errorHandler500 = require('./error-handlers/500');
-const personRoute = require('./routes/personRoute')
+const personRoute = require('./routes/personRoute');
+const validator = require('./middleware/validator');
 
 const app = express();
 
@@ -17,10 +18,10 @@ const app = express();
 app.use(timeLogger);
 
 app.get('/', timeLogger, greetingRoute);
-app.get('/person',errorHandler500, personRoute);
+app.get('/person',validator, personRoute);
 app.get('/test', testRoute);
 app.use(errorHandler404);
-
+app.use(errorHandler500);
 
 function start(PORT){
   app.listen(PORT, () => {
