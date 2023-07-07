@@ -20,5 +20,9 @@ describe('basic server functionality', () => {
   test('test route', async () => {
     const response = await request.get('/test');
     expect(response.text).toBe('this is a test route');
+  });
+  test('person route', async () => {
+    const response = await request.get('/person');
+    
   })
 })
