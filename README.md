@@ -37,3 +37,11 @@ Render deployed link - [here](https://server-deployment-practice-1phd.onrender.c
 GitHub Actions link - [here](https://github.com/rpruazol/server-deployment-practice/actions/runs/5433628273)
 
 Pull Request link - [here](https://github.com/rpruazol/server-deployment-practice/pull/3)
+
+# Lab 02
+
+Render deployed link - [here](TBA)
+
+GitHub Actions link - [here](TBA)
+
+Pull Request link - [here](TBA)
