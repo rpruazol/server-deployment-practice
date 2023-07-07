@@ -7,12 +7,14 @@ const greetingRoute = require('./controllers/greetingRoute');
 const timeLogger = require('./controllers/middleware');
 const testRoute = require('./controllers/testRoute');
 const errorHandler404 = require('./controllers/errorHandler404');
+const personRoute = require('./controllers/personRoute')
 
 const app = express();
 
 app.use(timeLogger);
 
 app.get('/', timeLogger, greetingRoute);
+app.get('/person', personRoute);
 app.get('/test', testRoute);
 app.use(errorHandler404);
 
