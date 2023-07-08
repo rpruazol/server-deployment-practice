@@ -13,6 +13,7 @@ const PORT = process.env.PORT;
 dbInstance
   .sync()
   .then(() => {
+    console.log('started')
     start(PORT);
   })
   .catch(console.error);

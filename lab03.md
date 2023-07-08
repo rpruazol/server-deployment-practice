@@ -7,12 +7,12 @@ Dynamic API Phase 2: Perform CRUD Operations on a database
 
 ## Before you begin
 
-1. Refer to the *Getting Started* guide  in the [lab submission instructions](../../../reference/submission-instructions/labs/README.md)
-1. Create a new repository called `api-server`.
-1. Work in a new branch called `basic-api`, created from `main`.
-1. Following completion of this assignment, create a Pull Request from `basic-api` to `main` and merge your code.
-   - You will deploy from your `main` branch to a new app at your cloud service provider.
-   - You will add a link to the PR that you merged in your README for grading purposes.
+~~1. Refer to the *Getting Started* guide  in the [lab submission instructions](../../../reference/submission-instructions/labs/README.md)~~
+~~1. Create a new repository called `api-server`.~~
+~~1. Work in a new branch called `basic-api`, created from `main`.~~
+~~1. Following completion of this assignment, create a Pull Request from `basic-api` to `main` and merge your code.~~
+   ~~- You will deploy from your `main` branch to a new app at your cloud service provider.~~
+   ~~- You will add a link to the PR that you merged in your README for grading purposes.~~
 
 ## Phase 2 Requirements
 
@@ -20,15 +20,10 @@ Build a REST API using Express, by creating a proper series of endpoints that pe
 
 ### SQL Models
 
-- Create 2 SQL data models using the `Sequelize` library, make sure you export those model instances.
-```text
-TODO:
-- Install the sequelize library npm package
-- Create a connection to the database via index.js
+~~- Create 2 SQL data models using the `Sequelize` library, make sure you export those model instances.~~
 
-```
-- Make sure your Models are configured with your SQL dialect and can properly connect to your database.
-  - Your models should have appropriate field names declared with specific sequelize `DataTypes`.
+~~- Make sure your Models are configured with your SQL dialect and can properly connect to your database.~~
+  ~~- Your models should have appropriate field names declared with specific sequelize `DataTypes`.~~
 
 > For the data models, you are free to choose your own data types and describe their fields ... For Example: person, animal, car, instrument, game
 
