@@ -77,8 +77,16 @@ test('GET request all cars', async () => {
 
 test('UPDATE a single car', async () => {
   const response = await request.put('/updatecar/2').send({model:'highlander'});
-  console.log(response.body);
   expect(JSON.parse(response.text).model).toBe('highlander');
+}),
+
+test('DELETE a single car', async () => {
+  const response = await request.delete('/deletecar/2');
+  expect(response.status).toBe(204);
+  expect(response.body).toEqual({});
+
+  const newRequest = await request.get('/cars')
+  expect(newRequest._body.length).toBe(1);
 })
 
 

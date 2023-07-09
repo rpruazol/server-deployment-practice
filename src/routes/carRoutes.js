@@ -9,6 +9,7 @@ const router = express.Router();
 router.get('/cars', getCars);
 router.post('/newcar', createCar);
 router.put('/updatecar/:id', updateCar);
+router.delete('/deletecar/:id', deleteCar);
 
 async function getCars(req, res){
   let allCars = await Car.findAll();
@@ -35,12 +36,15 @@ async function updateCar(req, res){
   console.log('update req', id, data)
   const car = await Car.findOne({where: {id}});
 
-  // record is not updating
   const updatedCar = await car.update(data);
-  console.log('DATA>>>', data);
-  console.log('OLDCAR>>>, ',car);
-  console.log('UPDATEDCAR>>>, ',updatedCar);
   res.status(200).json(updatedCar);
+}
+
+async function deleteCar(req, res){
+  const id = req.params.id;
+  // const car = await Car.findOne({where: {id}});
+  const deletedCar = await Car.destroy({where: {id}});
+  res.status(204).json(deletedCar);
 }
 
 
