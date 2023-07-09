@@ -62,7 +62,7 @@ describe('car route CRUD', () => {
    await dbInstance.drop();
   });
   
-test('Create a new car', async () => {
+test('POST a new car', async () => {
   const response = await request.post('/newcar').send(car);
   expect(JSON.parse(response.text)).toBeTruthy();
   expect(JSON.parse(response.text).vin).toBe('3TMMU52N88M007332');
