@@ -64,8 +64,16 @@ describe('car route CRUD', () => {
   
 test('Create a new car', async () => {
   const response = await request.post('/newcar').send(car);
-  console.log(response)
+  expect(JSON.parse(response.text)).toBeTruthy();
   expect(JSON.parse(response.text).vin).toBe('3TMMU52N88M007332');
+}),
+
+test('GET request all cars', async () => {
+  await request.post('/newcar').send(car);
+  const response = await request.get('/cars')
+  // console.log(response._body);
+  expect(response._body.length).toBe(2);
 })
+
 
 })
