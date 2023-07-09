@@ -10,18 +10,25 @@ const errorHandler404 = require('./error-handlers/404');
 const errorHandler500 = require('./error-handlers/500');
 const personRoute = require('./routes/personRoute');
 const validator = require('./middleware/validator');
+const carRoutes = require('./routes/carRoutes');
 
 const app = express();
 
-
+app.use(express.json());
 
 app.use(timeLogger);
 
 app.get('/', timeLogger, greetingRoute);
 app.get('/person',validator, personRoute);
 app.get('/test', testRoute);
-app.use(errorHandler404);
+
+app.use(carRoutes)
+
+
+
+app.use('*', errorHandler404);
 app.use(errorHandler500);
+
 
 function start(PORT){
   app.listen(PORT, () => {

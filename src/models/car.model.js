@@ -9,6 +9,7 @@ const Car = (dbInstance, DataTypes) =>
     },
     model: {
       type: DataTypes.STRING,
+      allowNull: false,
     },
     year: {
       type: DataTypes.INTEGER,
