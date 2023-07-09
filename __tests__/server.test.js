@@ -73,6 +73,12 @@ test('GET request all cars', async () => {
   const response = await request.get('/cars')
   // console.log(response._body);
   expect(response._body.length).toBe(2);
+}),
+
+test('UPDATE a single car', async () => {
+  const response = await request.put('/updatecar/2').send({model:'highlander'});
+  console.log(response.body);
+  expect(JSON.parse(response.text).model).toBe('highlander');
 })
 
 
