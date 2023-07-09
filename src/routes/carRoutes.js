@@ -2,8 +2,6 @@
 
 const express = require('express');
 const {Car} = require('../models/index');
-
-{}
 const router = express.Router();
 
 

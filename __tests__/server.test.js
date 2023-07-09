@@ -2,7 +2,7 @@
 
 const supertest = require('supertest');
 const { app } = require('../src/server');
-
+const {dbInstance} = require('../src/models');
 
 const request = supertest(app);
 
@@ -42,5 +42,30 @@ describe('routes and errors', () => {
     expect(JSON.parse(response.text).name).toBe('ray');
     expect(response.status).toBe(200);
   });
+
+})
+
+describe('car route CRUD', () => {
+  // import database connection
+  const car = {
+    make: 'toyota',
+    model: 'camry',
+    year: 2002,
+    color: 'red',
+    vin: '3TMMU52N88M007332'
+  }
+  beforeAll( async () => {
+    // sync before tests, drop afterward
+   await dbInstance.sync()
+  });
+  afterAll( async () => {
+   await dbInstance.drop();
+  });
+  
+test('Create a new car', async () => {
+  const response = await request.post('/newcar').send(car);
+  console.log(response)
+  expect(JSON.parse(response.text).vin).toBe('3TMMU52N88M007332');
+})
 
 })
