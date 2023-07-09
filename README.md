@@ -48,3 +48,9 @@ Pull Request link - [here](TBA)
 
 
 # Lab 03
+
+Render deployed link - [here](TBA)
+
+GitHub Actions link - [here](TBA)
+
+Pull Request link - [here](https://github.com/rpruazol/server-deployment-practice/pull/7)
