@@ -3,18 +3,39 @@
 
 const {dbInstance, vehicleCollection} = require('../src/models');
 
-beforeAll(() => {
-  dbInstance.sync()
+beforeAll(async () => {
+  await dbInstance.sync()
 })
 
-afterAll(() => {
-  dbInstance.drop()
+afterAll(async () => {
+  await dbInstance.drop()
 })
 
 
-describe('vehicle collection', () => {
-  it('grabs all vehicle data', async () => {
-    let response = await vehicleCollection.read();
-    expect(response).toEqual([]);
+describe('vehicle and car collection', () => {
+  it('create one vehicle', async () => {
+    const vehicle = {
+      type: 'car',
+      year: 1988,
+      color: 'white',
+      vin: '4T1BF3EK5BU638805',
+      electric: false
+    }
+    const response = await vehicleCollection.create(vehicle);
+    expect(response.color).toEqual('white')
   })
+  it('read all vehicle data', async () => {
+    const response = await vehicleCollection.read();
+    expect(response.length).toEqual(1);
+  })
+  it('read one row of vehicle data', async () => {
+    const response = await vehicleCollection.read(1);
+    expect(response.id).toEqual(1);
+  }),
+  it('update one row of vehicle data', async () => {
+    const response = await vehicleCollection.update(1, {color: 'brown'})
+    expect(response.color).toEqual('brown');
+  })
+
+
 })

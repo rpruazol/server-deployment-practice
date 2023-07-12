@@ -7,17 +7,20 @@ class Collection {
     this.model = model;
   }
 
-  create(obj) {
-    const newObj = obj
-    this.create(obj)
+  async create(obj) {
+    const response = await this.model.create(obj);
+    return response;
   }
 
   async read(id = null) {
-    return id === null ? await this.model.findAll() : await this.model.findOne({where: {id: id}})
+    return id === null ? await this.model.findAll() : await this.model.findOne({where: {id}})
   }
 
-  update(id) {
-// 
+  async update(id, data) {
+    const record = await this.model.findOne({where:{id}});
+
+    const response = await record.update(data);
+    return response;
   }
 
   delete(id) {
