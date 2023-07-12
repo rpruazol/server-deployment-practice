@@ -8,8 +8,7 @@ class Collection {
   }
 
   async create(obj) {
-    const response = await this.model.create(obj);
-    return response;
+    return await this.model.create(obj);
   }
 
   async read(id = null) {
@@ -19,12 +18,11 @@ class Collection {
   async update(id, data) {
     const record = await this.model.findOne({where:{id}});
 
-    const response = await record.update(data);
-    return response;
+    return await record.update(data);
   }
 
-  delete(id) {
-// 
+  async delete(id) {
+    return this.model.destroy({where:{id}})
   }
 }
 

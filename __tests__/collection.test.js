@@ -35,6 +35,11 @@ describe('vehicle and car collection', () => {
   it('update one row of vehicle data', async () => {
     const response = await vehicleCollection.update(1, {color: 'brown'})
     expect(response.color).toEqual('brown');
+  }),
+  it('delete one row of vehicle data', async () => {
+    const response = await vehicleCollection.delete(1)
+    const newResult = await vehicleCollection.read()
+    expect(newResult.length).toEqual(0);
   })
 
 
