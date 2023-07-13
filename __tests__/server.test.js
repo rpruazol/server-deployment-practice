@@ -62,7 +62,7 @@ describe("car route CRUD", () => {
   afterAll(async () => {
     await dbInstance.drop();
   });
-
+// These tests are clear and straight to the point, I like your delete test that checks to see if the index moves when theres a deletion//
   test("POST a new car", async () => {
     const response = await request.post("/newcar").send(car);
     expect(JSON.parse(response.text)).toBeTruthy();
