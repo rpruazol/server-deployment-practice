@@ -40,17 +40,30 @@ Pull Request link - [here](https://github.com/rpruazol/server-deployment-practic
 
 # Lab 02
 
-Render deployed link - [here](TBA)
+Render deployed link - [here](https://server-deployment-practice-1phd.onrender.com/)
 
-GitHub Actions link - [here](TBA)
+GitHub Actions link - [here](https://github.com/rpruazol/server-deployment-practice/actions/runs/5482647452)
 
-Pull Request link - [here](TBA)
+Pull Request link - [here](https://github.com/rpruazol/server-deployment-practice/pull/6/files)
 
 
 # Lab 03
 
-Render deployed link - [here](TBA)
+Render deployed link - [here](https://server-deployment-practice-1phd.onrender.com/)
 
-GitHub Actions link - [here](TBA)
+GitHub Actions link - [here](https://github.com/rpruazol/server-deployment-practice/actions/runs/5501730453)
 
 Pull Request link - [here](https://github.com/rpruazol/server-deployment-practice/pull/7)
+
+
+# Lab 04
+
+Render deployed link - [here](https://server-deployment-practice-1phd.onrender.com/)
+
+GitHub Actions link - [here](https://github.com/rpruazol/server-deployment-practice/actions/runs/5539151409)
+
+Pull Request link - [here](https://github.com/rpruazol/server-deployment-practice/pull/11)
+
+## Lab 04 Code Review
+- Received PR from Christine Hollie - https://github.com/rpruazol/server-deployment-practice/pull/9
+- Sent PR to Jonathan Brooks - https://github.com/rpruazol/jonathan-api-server/commit/8c76353980db74c6e4ee983106836f23d61a3c6f
