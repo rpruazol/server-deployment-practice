@@ -1,5 +1,7 @@
 'use strict';
 
+//I like that you have tests for all your CRUD routes. Very thorough.//
+
 const supertest = require('supertest');
 const { app } = require('../src/server');
 const {dbInstance} = require('../src/models');

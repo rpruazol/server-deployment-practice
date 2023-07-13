@@ -1,5 +1,7 @@
 "use strict";
 
+// It's cool that you made the ability to have any vehicle not just cars//
+
 const Vehicle = (dbInstance, DataTypes) =>
   dbInstance.define("Vehicle", {
     type: {

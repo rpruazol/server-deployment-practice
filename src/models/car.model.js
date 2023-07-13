@@ -1,6 +1,6 @@
 "use strict";
 
-
+// I like the extensiveness of your models//
 const Car = (dbInstance, DataTypes) => 
   dbInstance.define('Car', {
     make: {
