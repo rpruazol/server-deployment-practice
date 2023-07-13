@@ -46,7 +46,7 @@ describe("routes and errors", () => {
   });
 });
 
-describe("car route CRUD", () => {
+describe("car and route CRUD", () => {
   // import database connection
   const car = {
     make: "toyota",

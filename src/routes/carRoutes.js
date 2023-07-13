@@ -7,6 +7,7 @@ const router = express.Router();
 
 
 router.get('/cars', getCars);
+router.get('/cars/:id', getCars);
 router.post('/newcar', createCar);
 router.put('/updatecar/:id', updateCar);
 router.delete('/deletecar/:id', deleteCar);
@@ -35,7 +36,7 @@ async function updateCar(req, res){
   const id = req.params.id;
   const data = req.body;
   // console.log('update req', id, data)
-  const car = await carCollection.read({where: {id}});
+  const car = await carCollection.read(id);
   const updatedCar = await carCollection.update(id, data);
   res.status(200).json(updatedCar);
 }

@@ -11,6 +11,7 @@ const errorHandler500 = require('./error-handlers/500');
 const personRoute = require('./routes/personRoute');
 const validator = require('./middleware/validator');
 const carRoutes = require('./routes/carRoutes');
+const vehicleRoutes = require('./routes/vehicleRoutes');
 
 const app = express();
 
@@ -22,8 +23,8 @@ app.get('/', timeLogger, greetingRoute);
 app.get('/person',validator, personRoute);
 app.get('/test', testRoute);
 
-app.use(carRoutes)
-
+app.use(carRoutes);
+app.use(vehicleRoutes);
 
 
 app.use('*', errorHandler404);
