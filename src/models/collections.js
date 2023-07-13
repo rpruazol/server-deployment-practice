@@ -22,7 +22,8 @@ class Collection {
   }
 
   async delete(id) {
-    return this.model.destroy({where:{id}})
+    const response = await this.model.destroy({where:{id}})
+    return response
   }
 }
 

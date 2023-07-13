@@ -13,17 +13,20 @@ const POSTGRES_URI =
   
   const sequelize = new Sequelize(POSTGRES_URI);
   
-  console.log('sequelize', sequelize.options.dialect);
-  console.log('Car', car);
-  
-  
+
   const vehicleModel = vehicle(sequelize, DataTypes)
   const vehicleCollection = new Collection(vehicleModel);
 
+  const carModel = car(sequelize, DataTypes)
+  const carCollection = new Collection(carModel);
 
+  // associations
+
+  carModel.belongsTo(vehicleModel)
+  vehicleModel.hasMany(carModel)
 
 module.exports = {
   dbInstance: sequelize,
-  Car: car(sequelize, DataTypes),
+  carCollection,
   vehicleCollection
 };
