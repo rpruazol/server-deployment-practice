@@ -1,33 +1,33 @@
 'use strict';
 
 const express = require('express');
-const {carCollection} = require('../models/index');
+const {carCollection, vehicleCollection} = require('../models/index');
 const router = express.Router();
 
 
 
 router.get('/cars', getCars);
-router.get('/cars/:id', getCars);
+router.get('/cars/:id', getOneCar);
 router.post('/newcar', createCar);
 router.put('/updatecar/:id', updateCar);
 router.delete('/deletecar/:id', deleteCar);
 
 async function getCars(req, res){
-  let allCars = await carCollection.read();
+  let allCars = await carCollection.read(null, {
+    include: {model:vehicleCollection.model}
+  });
+  // console.log(allCars);
+  res.status(200).json(allCars);
+}
+async function getOneCar(req, res){
+  const id = req.params.id
+  console.log('getonecar', id)
+  let allCars = await carCollection.read(id);
   // console.log(allCars);
   res.status(200).json(allCars);
 }
 
 async function createCar(req, res){
-  // const car = await Car.create({
-  //   make: req.body.make,
-  //   model: req.body.model,
-  //   year: req.body.year,
-  //   color: req.body.color,
-  //   vin: req.body.vin
-  // }, {
-  //   fields: ['make','model','year','color', 'vin']
-  // });
   const car = await carCollection.create(req.body)
   res.status(200).json(car);
 }
