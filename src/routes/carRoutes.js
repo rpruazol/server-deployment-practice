@@ -16,7 +16,7 @@ async function getCars(req, res){
   // console.log(allCars);
   res.status(200).json(allCars);
 }
-
+// this creates a new object in your database with the following model components, I like how this is done with the fields so its easier to input//
 async function createCar(req, res){
   // const car = await Car.create({
   //   make: req.body.make,
