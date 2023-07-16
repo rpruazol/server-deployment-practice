@@ -28,7 +28,7 @@ const POSTGRES_URI =
   })
   carModel.belongsTo(vehicleModel, {
     foreignKey: 'vehicleId',
-    sourceKey: 'id'
+    targetKey: 'id'
   })
 
 module.exports = {

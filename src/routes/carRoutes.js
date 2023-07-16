@@ -13,9 +13,7 @@ router.put('/updatecar/:id', updateCar);
 router.delete('/deletecar/:id', deleteCar);
 
 async function getCars(req, res){
-  let allCars = await carCollection.read(null, {
-    include: {model:vehicleCollection.model}
-  });
+  let allCars = await carCollection.read(null);
   // console.log(allCars);
   res.status(200).json(allCars);
 }

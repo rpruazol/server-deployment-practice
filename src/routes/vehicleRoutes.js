@@ -1,7 +1,7 @@
 'use strict';
 
 const express = require('express');
-const {vehicleCollection} = require('../models/index');
+const {vehicleCollection, carCollection} = require('../models/index');
 const router = express.Router();
 
 router.get('/vehicles', getVehicles);
@@ -11,7 +11,8 @@ router.put('/updatevehicle', updateVehicle);
 router.delete('/deletevehicle', deleteVehicle);
 
 async function getVehicles(req, res) {
-  const allVehicles = await vehicleCollection.read();
+  const allVehicles = await vehicleCollection.read(null,{    include: {model:carCollection.model}
+  });
   res.status(200).json(allVehicles)
 }
 
