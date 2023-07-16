@@ -11,8 +11,15 @@ class Collection {
     return await this.model.create(obj);
   }
 
-  async read(id = null) {
-    return id === null ? await this.model.findAll() : await this.model.findOne({where: {id}})
+  async read(id = null, options = {}) {
+    let records;
+    if(id === null){
+      records = await this.model.findAll(options) 
+    }else {
+      options.where = {id : id}
+      records = await this.model.findOne(options);
+    }
+    return records;
   }
 
   async update(id, data) {

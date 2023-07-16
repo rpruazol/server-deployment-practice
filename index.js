@@ -11,7 +11,7 @@ const PORT = process.env.PORT;
 // connect to our database
 
 dbInstance
-  .sync()
+  .sync({force:true})
   .then((res) => {
     console.log('started', res.models)
     start(PORT);

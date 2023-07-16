@@ -46,7 +46,7 @@ describe("routes and errors", () => {
   });
 });
 
-describe("car route CRUD", () => {
+describe("car and route CRUD", () => {
   // import database connection
   const car = {
     make: "toyota",
@@ -73,6 +73,11 @@ describe("car route CRUD", () => {
       const response = await request.get("/cars");
       // console.log(response._body);
       expect(response._body.length).toBe(2);
+    }),
+    test("GET request one car", async () => {
+      const response = await request.get("/cars/1")
+      // console.log(response._body);
+      expect(response._body.id).toBe(1);
     }),
     test("UPDATE a single car", async () => {
       const response = await request

@@ -13,13 +13,21 @@ const Car = (dbInstance, DataTypes) =>
     },
     year: {
       type: DataTypes.INTEGER,
+      allowNull: false,
+
     },
-    color: {
+    type: {
       type: DataTypes.STRING,
+      allowNull: false,
     },
     vin: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
+      allowNull: false
     },
+    vehicleId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    }
   });
 
 

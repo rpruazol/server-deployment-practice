@@ -22,8 +22,14 @@ const POSTGRES_URI =
 
   // associations
 
-  carModel.belongsTo(vehicleModel)
-  vehicleModel.hasMany(carModel)
+  vehicleModel.hasMany(carModel, {
+    foreignKey: 'vehicleId',
+    sourceKey: 'id'
+  })
+  carModel.belongsTo(vehicleModel, {
+    foreignKey: 'vehicleId',
+    targetKey: 'id'
+  })
 
 module.exports = {
   dbInstance: sequelize,
